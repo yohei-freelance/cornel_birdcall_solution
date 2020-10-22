@@ -25,6 +25,7 @@ kaggle datasets download -d ttahara/birdsong-resampled-train-audio-04
 ```
 
 <p>and place folders to cornel_birdcall_solution/data .</p>
+<p>then, don't forget to set output dir in cornel_birdcall_solution/configs/config.yaml</p>
 
 3. run training!
 ```bash

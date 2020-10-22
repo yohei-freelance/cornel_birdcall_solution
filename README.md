@@ -4,7 +4,7 @@
 <p>I was 117th/1390, and got bronze medal(🥉).</p>
 
 <h3>How to run this code?</h3>
-<p>I didn't upload data to this repo, for training was too heavy...</p>
+<p>I didn't upload data to this repo, for training data was too heavy...</p>
 
 
 1. clone this repo

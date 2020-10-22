@@ -17,7 +17,7 @@ import torch.nn.functional as F
 import torch.utils.data as data
 from torchvision import models, transforms
 
-birdcode_path = Path.cwd() / 'cornel_birdcall_solution' / 'utils' / 'birdcode.json'
+birdcode_path = Path.cwd() / 'utils' / 'birdcode.json'
 with open(birdcode_path, 'r') as jsn:
     BIRD_CODE = json.load(jsn)
 

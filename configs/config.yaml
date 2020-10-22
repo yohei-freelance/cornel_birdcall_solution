@@ -1,0 +1,57 @@
+globals:
+  seed: 1213
+  device: cuda:0
+  num_epochs: 60
+  output_dir: /home/yohei.nomoto/birdcall/fold2
+  use_fold: 2
+  target_sr: 32000
+
+dataset:
+  name: SpectrogramDataset
+  params:
+    img_size: 224
+    melspectrogram_parameters:
+      n_mels: 256
+      fmin: 20
+      fmax: 16000
+    
+split:
+  name: StratifiedKFold
+  params:
+    n_splits: 5
+    random_state: 42
+    shuffle: True
+
+loader:
+  train:
+    batch_size: 50
+    shuffle: True
+    num_workers: 2
+    pin_memory: True
+    drop_last: True
+  val:
+    batch_size: 100
+    shuffle: False
+    num_workers: 2
+    pin_memory: True
+    drop_last: False
+
+model:
+  name: efficientnet-b0
+  params:
+    pretrained: True
+    n_classes: 264
+
+loss:
+  name: BCEWithLogitsLoss
+  params: {}
+
+optimizer:
+  name: Adam
+  params:
+    lr: 0.001
+
+scheduler:
+  name: CosineAnnealingLR
+  params:
+    T_max: 10
